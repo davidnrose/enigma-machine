@@ -10,7 +10,7 @@ st.set_page_config("Enigma Machine")
 st.title("Welcome to Enigma!")
 
 # set image
-st.image("enigma_machine.jpg", caption="Christian Lendl on Unsplash")
+st.image("enigma_machine.png", caption="Christian Lendl on Unsplash")
 
 # introductory text and overview
 st.write("Some information about the enigma machine and how to use it")
