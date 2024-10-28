@@ -13,14 +13,21 @@ st.title("Welcome to Enigma!")
 st.image("enigma_machine.png", caption="Christian Lendl on Unsplash")
 
 # introductory text and overview
-st.write("Some information about the enigma machine and how to use it")
+st.write("The engima machine is among the best known of text ciphers. Developed and deployed by the Nazis during the Second World War, uncovering the workings of this electromechanical encoding device was a top priority for the Allies in the Atlantic theatre. Understanding enemy messages was the difference between life and death.")
 st.write("Here you encrypt and decrypt messages in the same way that Axis powers made use of the Enigma Machine during the Second World War.")
+st.divider()
 
+# using the machine
+st.subheader("Using the Machine")
+st.write("To encrypt a message, simply write in the text input and hit enter. If you have received a message encrypted with Enigma, then you can enter the cipher text and hit enter to get the original message. But remember: to decrypt a message you must use the same settings that were used to encrypt the message.")
+st.write("The original Enigma Machine didn't use a random seed, but one is used here to increase variation. The other settings are 1) choosing the plugboard and 2) setting the order of the rotors. This mimics how the real Enigma Machine would have been set up.")
 st.divider()
 
 # machine configuration
-st.subheader("Configure the Machine")
+st.subheader("Settings")
 st.write("Here you configure the Machine settings. If you have received an ecrypted message, then you should use the same settings that the Encrypter used.")
+st.write("Although the original Enigma Machine was electromechanical and this 'Machine' is created with software, the encoding process is replicated exactly. Click to read more about this project and the Enigma Machine.")
+
 
 # initialise columns
 col1, col2 = st.columns(2, gap="medium")
@@ -78,6 +85,8 @@ R = em.Reflector(seed+4, alpha)
 machine = em.Machine(p, rotors_ord, R)
 
 ### --- ENCRYPT AND DECRYPT --- ###
+
+st.subheader("Encrypt your message")
 
 # input text
 input_text = st.text_input("Enter your plaintext or ciphertext here to encrypt or decrypt:", help="Enter only letters and fullstop characters")
